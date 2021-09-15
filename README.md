@@ -1,4 +1,4 @@
-# Wg's configuration_files
+# W's configuration_files
 
 ## Install neovim, tmux, fzf, ripgrep
 sudo apt update \
