@@ -14,8 +14,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 
 ## Fecth config files
-cd ~/.config
-git clone https://github.com/wangkeunoh/configuration_files.git
-
-cp tmux.conf ~/.tmux.conf
+cd ~/.config \
+git clone https://github.com/wangkeunoh/configuration_files.git \
+cp tmux.conf ~/.tmux.conf \
 cp -r tmux ~/.tmux
