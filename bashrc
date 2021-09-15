@@ -123,7 +123,13 @@ alias vim=nvim
 
 PATH=$PATH:/home/wangkeun/handmade_tool/
 
-
+#sudo apt-get install xclip, ex) cat file | xclip, xclip -o
+#Terminal 1:
+#pwd | c
+#Terminal 2:
+#cd `v`
+alias "c=xclip"
+alias "v=xclip -o"
 #=====================================================================================================================#
 #                                                    end                                                              #
 #=====================================================================================================================#
