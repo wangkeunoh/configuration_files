@@ -18,5 +18,5 @@ cd ~/.config \
 git clone https://github.com/wangkeunoh/configuration_files nvim \
 cp tmux.conf ~/.tmux.conf \
 cp -r tmux ~/.tmux \
-add '. ~/.bashrc' to ~/.bash_profile  in the last line, \ 
+add '. ~/.bashrc' to ~/.bash_profile  in the last line, \
 in order to avoid typing every time source ~/.bashrc in tmux  
