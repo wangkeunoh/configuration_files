@@ -1,4 +1,7 @@
-" My like keybindings Doom Emacs
+"====================================================================================================================="
+"                                                  wg_keymap"
+"====================================================================================================================="
+" initialize plugin
 
 let mapleader = "\<SPACE>"
 nnoremap <leader><SPACE> :NERDTreeToggle<CR>
@@ -7,10 +10,6 @@ nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fg :GFiles<CR>
 " Search
 nnoremap <leader>sp :Rg<CR>
-" Buffers
-nnoremap <leader>bb :Buffers<CR>
-nnoremap <leader>bn :bnext<CR>
-nnoremap <leader>bp :bprevious<CR>
 " Open
 nnoremap <leader>on :NERDTreeToggle<CR>
 nnoremap <leader>ot :terminal<CR>
@@ -23,6 +22,7 @@ nnoremap <leader>wk <C-w>K
 nnoremap <leader>wl <C-w>L
 
 " Remap keys
+nnoremap <F1> :TagbarToggle<CR>
 " nnoremap <C-Left> :bprevious<CR>
 " nnoremap <C-Right> :bnext<CR>
 " nnoremap <F2> :FZF<CR>
@@ -33,32 +33,7 @@ nnoremap <leader>wl <C-w>L
 " inoremap <F4> <Esc>:NERDTreeToggle<CR>
 " nnoremap <F5> :Rg<CR>
 " inoremap <F5> <Esc>:Rg<CR>
-" nnoremap <F6> :TagbarToggle<CR>
 " inoremap <F6> <Esc>:TagbarToggle<CR>
-
-" My like keybindings Doom Emacs
-" let mapleader = "\<SPACE>"
-" nnoremap <SPACE><SPACE> :NERDTreeToggle<CR>
-" " Files
-" nnoremap <SPACE>ff :Files<CR>
-" nnoremap <SPACE>fg :GFiles<CR>
-" " Search
-" nnoremap <SPACE>sp :Rg<CR>
-" " Buffers
-" nnoremap <SPACE>bb :Buffers<CR>
-" nnoremap <SPACE>bn :bnext<CR>
-" nnoremap <SPACE>bp :bprevious<CR>
-" " Open
-" nnoremap <SPACE>on :NERDTreeToggle<CR>
-" nnoremap <SPACE>ot :terminal<CR>
-" " Window manager
-" nnoremap <SPACE>ws :split<CR>
-" nnoremap <SPACE>wv :vsplit<CR>
-" nnoremap <SPACE>wh <C-w>H
-" nnoremap <SPACE>wj <C-w>J
-" nnoremap <SPACE>wk <C-w>K
-" nnoremap <SPACE>wl <C-w>L
-
 
 
 " Move line
@@ -88,3 +63,6 @@ vnoremap <C-Up> :m '<-2<CR>gv=gv
 " :inoremap ii <Esc>
 " :imap ii <Esc>
 
+"====================================================================================================================="
+"                                                    end                                                              "
+"====================================================================================================================="
