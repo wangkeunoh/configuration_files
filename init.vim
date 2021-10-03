@@ -11,12 +11,12 @@ call plug#end()
  source ~/.config/nvim/plugin/fzf.vim 
 
 " general settings
+set wrap
 set title                           " show the file name on terminal window.
 set number                          " show line numbers.  
 set relativenumber 
 set mouse=a                         " enable mouse interaction.
 set history=1000                    " increase history size.
-set nowrap                          " do not divide the line if it is long.
 set cursorline                      " show the current line.
 set synmaxcol=160
 set tabstop=2                       " tabs with 4 spaces.
@@ -26,6 +26,8 @@ set shiftround
 set expandtab                       " inserts spaces indest <Tab>s.
 set autoread                        " autoReload if a file is modified
 au FocusGained * :checktime
+set splitright
+set splitbelow
 
 " search options
 set ignorecase                      " ignore uppercase in searches.
@@ -57,6 +59,12 @@ map t :bp <BAR> bd #<CR>
 
 "tagbar width
 let g:tagbar_width=40
+
+"pane size
+nnoremap <left> :vertical resize -5<CR>
+nnoremap <down> :resize resize -5<CR>
+nnoremap <up> :resize +5<CR>
+nnoremap <right> :vertical resize +5<CR>
 "====================================================================================================================="
 "                                                    end                                                              "
 "====================================================================================================================="

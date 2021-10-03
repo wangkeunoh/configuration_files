@@ -1,4 +1,12 @@
+"====================================================================================================================="
+"                                                  wg_rg"
+"====================================================================================================================="
 " Get text in files with Rg
+ command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
 " Ripgrep advanced, from README
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
@@ -8,3 +16,9 @@ function! RipgrepFzf(query, fullscreen)
   call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), 1) "a:fullscreen
 endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
+" Rg sometimes causes Vim to freeze
+set nocompatible hidden laststatus=2
+
+nnoremap <A-f> :Rg<CR>
+

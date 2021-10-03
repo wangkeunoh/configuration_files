@@ -3,15 +3,14 @@
 "====================================================================================================================="
 " initialize plugin
 
+nnoremap <ESC> :nohl<CR>
 let mapleader = "\<SPACE>"
-nnoremap <leader><SPACE> :NERDTreeToggle<CR>
 " Files
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fg :GFiles<CR>
 " Search
 nnoremap <leader>sp :Rg<CR>
 " Open
-nnoremap <leader>on :NERDTreeToggle<CR>
 nnoremap <leader>ot :terminal<CR>
 " Window 
 nnoremap <leader>ws :split<CR>
@@ -23,20 +22,7 @@ nnoremap <leader>wl <C-w>L
 
 " Remap keys
 nnoremap <F1> :TagbarToggle<CR>
-" nnoremap <C-Left> :bprevious<CR>
-" nnoremap <C-Right> :bnext<CR>
-" nnoremap <F2> :FZF<CR>
-" inoremap <F2> <Esc>:FZF<CR>
-" nnoremap <F3> :Buffers<CR>
-" inoremap <F3> <Esc>:Buffers<CR>
-" nnoremap <F4> :NERDTreeToggle<CR>
-" inoremap <F4> <Esc>:NERDTreeToggle<CR>
-" nnoremap <F5> :Rg<CR>
-" inoremap <F5> <Esc>:Rg<CR>
-" inoremap <F6> <Esc>:TagbarToggle<CR>
 
-
-" Move line
 " Normal mode
 nnoremap <C-Down> :m .+1<CR>==
 nnoremap <C-Up> :m .-2<CR>==
