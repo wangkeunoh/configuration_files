@@ -23,5 +23,5 @@ add '. ~/.bashrc' to ~/.bash_profile  in the last line, \
 in order to avoid typing every time source ~/.bashrc in tmux  
 
 
-ref 
+ref \
 https://www.chrisatmachine.com/Neovim/08-fzf/
