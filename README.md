@@ -25,3 +25,6 @@ in order to avoid typing every time source ~/.bashrc in tmux
 
 ## Ref
 https://www.chrisatmachine.com/Neovim/08-fzf/
+
+
+## trouble shooting
