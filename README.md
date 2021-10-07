@@ -28,3 +28,4 @@ https://www.chrisatmachine.com/Neovim/08-fzf/
 
 
 ## trouble shooting
+tmux-onedark-theme.tmux' returned 126 : chmod 777
