@@ -9,6 +9,9 @@ call plug#end()
 " import conf files
  source ~/.config/nvim/plugin/rg.vim 
  source ~/.config/nvim/plugin/fzf.vim 
+ source ~/.config/nvim/plugin/nerd.vim 
+ source ~/.config/nvim/plugin/wiki.vim 
+ source ~/.config/nvim/plugin/startify.vim 
 
 " general settings
 set wrap

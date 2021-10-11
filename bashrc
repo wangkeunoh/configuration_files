@@ -132,8 +132,23 @@ alias "c=xclip"
 alias "v=xclip -o"
 
 alias new='tmux new-session -s'
+alias attach='tmux attach -t'
+alias tx=tmuxinator
+
+set-title() {
+    ORIG=$PS1
+    TITLE="\e]2;$@\a"
+    PS1=${ORIG}${TITLE}
+}
+
+#RubyGems packages (called gems), Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+
+#tmuxinator
+export EDITOR=nvim 
+
 #=====================================================================================================================#
 #                                                    end                                                              #
 #=====================================================================================================================#
-
 

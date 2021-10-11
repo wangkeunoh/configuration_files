@@ -33,3 +33,8 @@ Plug 'taohexxx/lightline-buffer'
 Plug 'joshdick/onedark.vim'
 Plug 'rakr/vim-one'
 Plug 'morhetz/gruvbox'
+" nerd multi open
+Plug 'philrunninger/nerdtree-visual-selection'
+" wiki
+Plug 'vimwiki/vimwiki'
+Plug 'mhinz/vim-startify'
