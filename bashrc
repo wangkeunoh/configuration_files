@@ -120,9 +120,9 @@ fi
 #=====================================================================================================================#
 alias vi=nvim
 alias vim=nvim
-
-PATH=$PATH:/home/wangkeun/handmade_tool/
-
+alias new='tmux new-session -s'
+alias attach='tmux attach -t'
+alias tx=tmuxinator
 #sudo apt-get install xclip, ex) cat file | xclip, xclip -o
 #Terminal 1:
 #pwd | c
@@ -131,9 +131,7 @@ PATH=$PATH:/home/wangkeun/handmade_tool/
 alias "c=xclip"
 alias "v=xclip -o"
 
-alias new='tmux new-session -s'
-alias attach='tmux attach -t'
-alias tx=tmuxinator
+PATH=$PATH:/home/wangkeun/handmade_tool/
 
 set-title() {
     ORIG=$PS1
@@ -151,4 +149,3 @@ export EDITOR=nvim
 #=====================================================================================================================#
 #                                                    end                                                              #
 #=====================================================================================================================#
-
