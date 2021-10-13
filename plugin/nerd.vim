@@ -6,6 +6,8 @@
 nnoremap <leader><SPACE> :NERDTreeToggle<CR>
 nnoremap <leader>n :NERDTreeFind<CR>
 
+let g:NERDTreeWinSize=80
+let g:NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 

@@ -21,3 +21,10 @@ command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
 let g:fzf_tags_command = 'ctags -R'
+
+nmap <F2> :Files /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/RIO/<CR>
+nmap <F3> :Files /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/SOLO/<CR>
+nmap <F4> :Files /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/VENDOR/<CR>
+nmap <F5> :Files /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/VENDOR_OS_UP/<CR>
+
+let $FZF_DEFAULT_OPTS='--bind=alt-a:select-all,alt-d:deselect-all'

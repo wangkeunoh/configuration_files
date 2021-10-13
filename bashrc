@@ -88,6 +88,7 @@ fi
 
 # some more ls aliases
 #alias ll='ls -alF'
+alias ll='ls -ltr'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -121,8 +122,6 @@ fi
 alias ll='ls -ltr'
 alias vi=nvim
 alias vim=nvim
-alias new='tmux new-session -s'
-alias attach='tmux attach -t'
 alias tx=tmuxinator
 #sudo apt-get install xclip, ex) cat file | xclip, xclip -o
 #Terminal 1:
@@ -131,13 +130,15 @@ alias tx=tmuxinator
 #cd `v`
 alias "c=xclip"
 alias "v=xclip -o"
+alias new='tmux new-session -s'
+alias attach='tmux attach -t'
+PATH=$PATH:/home-mc/wangkeun.oh/handmade_tool/
 
-PATH=$PATH:/home/wangkeun/handmade_tool/
-
-set-title() {
-    ORIG=$PS1
-    TITLE="\e]2;$@\a"
-    PS1=${ORIG}${TITLE}
+#myfunc
+set-title(){
+  ORIG=$PS1
+  TITLE="\e]2;$@\a"
+  PS1=${ORIG}${TITLE}
 }
 
 #RubyGems packages (called gems), Install Ruby Gems to ~/gems
@@ -150,3 +151,42 @@ export EDITOR=nvim
 #=====================================================================================================================#
 #                                                    end                                                              #
 #=====================================================================================================================#
+
+#--------------------------------------------------------------------------------------------
+alias gotoSS='cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/'
+# Copy current working directory
+alias cbwd="pwd | cb"
+# arr extrct
+alias arr="cp -r /home/wangkeun/tool/unark/* ./"
+cb() {
+    local _scs_col="\e[0;32m"; local _wrn_col='\e[1;31m'; local _trn_col='\e[0;33m'
+    # Check that xclip is installed.
+    if ! type xclip > /dev/null 2>&1; then
+      echo -e "$_wrn_col""You must have the 'xclip' program installed.\e[0m"
+    # Check user is not root (root doesn't have access to user xorg server)
+    elif [[ "$USER" == "root" ]]; then
+      echo -e "$_wrn_col""Must be regular user (not root) to copy a file to the clipboard.\e[0m"
+    else
+      # If no tty, data should be available on stdin
+      if ! [[ "$( tty )" == /dev/* ]]; then
+        input="$(< /dev/stdin)"
+      # Else, fetch input from params
+      else
+        input="$*"
+      fi
+      if [ -z "$input" ]; then  # If no input, print usage message.
+        echo "Copies a string to the clipboard."
+        echo "Usage: cb <string>"
+        echo "       echo <string> | cb"
+      else
+       # Copy input to clipboard
+       echo -n "$input" | xclip -selection c
+       # Truncate text for status
+       if [ ${#input} -gt 80 ]; then input="$(echo $input | cut -c1-80)$_trn_col...\e[0m"; fi
+       # Print status.
+       echo -e "$_scs_col""Copied to clipboard:\e[0m $input"
+      fi
+     fi
+}
+function cbf() { cat "$1" | cb; }
+#--------------------------------------------------------------------------------------------
