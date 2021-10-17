@@ -14,6 +14,7 @@ call plug#end()
  source ~/.config/nvim/plugin/startify.vim 
 
 " general settings
+set noswapfile
 set wrap
 set title                           " show the file name on terminal window.
 set number                          " show line numbers.  

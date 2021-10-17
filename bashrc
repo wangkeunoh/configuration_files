@@ -123,6 +123,7 @@ alias ll='ls -ltr'
 alias vi=nvim
 alias vim=nvim
 alias tx=tmuxinator
+alias st='set-title'
 #sudo apt-get install xclip, ex) cat file | xclip, xclip -o
 #Terminal 1:
 #pwd | c
@@ -132,7 +133,8 @@ alias "c=xclip"
 alias "v=xclip -o"
 alias new='tmux new-session -s'
 alias attach='tmux attach -t'
-PATH=$PATH:/home-mc/wangkeun.oh/handmade_tool/
+alias db="~/.dropbox-dist/dropboxd"
+PATH=$PATH:/home/wangkeun/handmade_tool/
 
 #myfunc
 set-title(){
