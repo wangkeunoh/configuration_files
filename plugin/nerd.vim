@@ -6,9 +6,12 @@
 nnoremap <leader><SPACE> :NERDTreeToggle<CR>
 nnoremap <leader>n :NERDTreeFind<CR>
 
+let g:NERDTreeWinSize=80
+let g:NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowHidden = 1
+
 
 " Filename:  ~/.vim/ftplugin/nerdtree.vim
 " Purpose: Given a Visual-Line selection in the NERDTree buffer, this code

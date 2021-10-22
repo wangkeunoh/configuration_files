@@ -24,8 +24,8 @@ nnoremap <A-f> :Rg<CR>
 
 "analysis
 let mapleader = "\<SPACE>"
-"nnoremap <leader>0 :let @" = expand("%:p")<CR>
-"nnoremap <leader>1 :cd /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/RIO/<CR>
-"nnoremap <leader>2 :cd /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/SOLO/Common<CR>
-"nnoremap <leader>3 :cd /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/VENDOR/<CR>
+nnoremap <leader>0 :let @" = expand("%:p")<CR>
+nnoremap <leader>1 :cd /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/RIO/<CR>
+nnoremap <leader>2 :cd /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/SOLO/Common<CR>
+nnoremap <leader>3 :cd /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/VENDOR/<CR>
 nnoremap <leader>f :BLines 

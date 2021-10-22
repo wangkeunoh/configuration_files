@@ -22,9 +22,10 @@ command! -bang -nargs=? -complete=dir Files
 
 let g:fzf_tags_command = 'ctags -R'
 
-nmap <F2> :Files /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/RIO/<CR>
-nmap <F3> :Files /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/SOLO/<CR>
-nmap <F4> :Files /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/VENDOR/<CR>
-nmap <F5> :Files /media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/VENDOR_OS_UP/<CR>
+nmap <F2> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/RIO/<CR>
+nmap <F3> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/SOLO/<CR>
+nmap <F4> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/VENDOR/<CR>
+nmap <F5> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/VENDOR_OS_UP/<CR>
 
 let $FZF_DEFAULT_OPTS='--bind=alt-a:select-all,alt-d:deselect-all'
+

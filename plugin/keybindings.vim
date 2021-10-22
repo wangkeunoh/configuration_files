@@ -22,32 +22,9 @@ nnoremap <leader>wl <C-w>L
 
 " Remap keys
 nnoremap <F1> :TagbarToggle<CR>
-
-" Normal mode
-nnoremap <C-Down> :m .+1<CR>==
-nnoremap <C-Up> :m .-2<CR>==
-" Insert mode
-inoremap <C-Down> <ESC>:m .+1<CR>==gi
-inoremap <C-Up> <ESC>:m .-2<CR>==gi
-" Visual mode
-vnoremap <C-Down> :m '>+1<CR>gv=gv
-vnoremap <C-Up> :m '<-2<CR>gv=gv
-
-" nnoremap <Down> gj
-" nnoremap <Up> gk
-" inoremap <Down> <ESC>gja
-" inoremap <Up> <ESC>gka
-
-
-" let mapleader = ","
-" noremap <leader>w :w<CR>
-" noremap <leader>q :q<CR>
-" noremap <leader>gs :CocSearch
-" noremap <leader>fs :Files<CR>
-" noremap <leader><CR> <CR><c-w>h:q<CR>
-
-" :inoremap ii <Esc>
-" :imap ii <Esc>
+" 
+map <F12> :%s/^.*\| //g<CR>
+nnoremap <C-A> ggVG
 
 "====================================================================================================================="
 "                                                    end                                                              "
