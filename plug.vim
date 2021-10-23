@@ -1,8 +1,6 @@
-" =====================================================================================================================
-"
-"   PLUGINS INSTALLED
-"
-" =====================================================================================================================
+" ================================================================================
+"                                    PLUGINS INSTALL                             "
+" ================================================================================
 "
 " Git
 Plug 'tpope/vim-fugitive'
@@ -38,3 +36,6 @@ Plug 'philrunninger/nerdtree-visual-selection'
 " wiki
 Plug 'vimwiki/vimwiki'
 Plug 'mhinz/vim-startify'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'vitalk/vim-simple-todo'
+let g:simple_todo_tick_symbol = '*'

@@ -12,6 +12,7 @@ call plug#end()
  source ~/.config/nvim/plugin/nerd.vim 
  source ~/.config/nvim/plugin/wiki.vim 
  source ~/.config/nvim/plugin/startify.vim 
+ source ~/.config/nvim/plugin/markdown.vim
 
 " general settings
 set noswapfile
@@ -69,6 +70,7 @@ nnoremap <left> :vertical resize -5<CR>
 nnoremap <down> :resize resize -5<CR>
 nnoremap <up> :resize +5<CR>
 nnoremap <right> :vertical resize +5<CR>
+
 "============================================================================================"
 "                                                              end                           "
 "============================================================================================"
