@@ -1,14 +1,16 @@
 " local leader key setting
-let maplocalleader = "\<SPACE>"
+let maplocalleader = "\\"
 let g:vimwiki_list = [
     \{
     \   'path': '~/git_workspace/wangkeunoh.github.io/_wiki/',
     \   'ext' : '.md',
+    \   'syntax' : 'markdown',
     \   'diary_rel_path': '.',
     \},
     \{
     \   'path': '~/Dropbox/p_wiki/',
     \   'ext' : '.md',
+    \   'syntax' : 'markdown',
     \   'diary_rel_path': '.',
     \},
 \]
@@ -47,14 +49,14 @@ function! NewTemplate()
     endif
 
     let l:template = []
-    call add(l:template, '---')
+    call add(l:template, '<!--')
     call add(l:template, 'title   : ')
     call add(l:template, 'summary : ')
     call add(l:template, 'date    : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
     call add(l:template, 'updated : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
     call add(l:template, 'tags    : ')
     call add(l:template, 'parent  : ')
-    call add(l:template, '---')
+    call add(l:template, '-->')
     call setline(1, l:template)
     execute 'normal! G'
     execute 'normal! $'
@@ -67,3 +69,10 @@ augroup vimwikiauto
     autocmd BufWritePre *wiki/*.md call LastModified()
     autocmd BufRead,BufNewFile *wiki/*.md call NewTemplate()
 augroup END
+
+command! Diary VimwikiDiaryIndex
+augroup vimwikigroup
+    autocmd!
+    " automatically update links on read diary
+    autocmd BufRead,BufNewFile diary.wiki VimwikiDiaryGenerateLinks
+augroup end

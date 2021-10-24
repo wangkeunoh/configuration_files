@@ -4,7 +4,7 @@
 " initialize plugin
 
 nnoremap <ESC> :nohl<CR>
-let mapleader = "\<SPACE>"
+"let mapleader = "\<SPACE>"
 " Files
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fg :GFiles<CR>

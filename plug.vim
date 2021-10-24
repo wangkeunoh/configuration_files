@@ -39,3 +39,4 @@ Plug 'mhinz/vim-startify'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'vitalk/vim-simple-todo'
 let g:simple_todo_tick_symbol = '*'
+Plug 'itchyny/calendar.vim'
