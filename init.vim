@@ -12,7 +12,6 @@ call plug#end()
  source ~/.config/nvim/plugin/nerd.vim 
  source ~/.config/nvim/plugin/wiki.vim 
  source ~/.config/nvim/plugin/startify.vim 
- source ~/.config/nvim/plugin/markdown.vim
  source ~/.cache/calendar.vim/credentials.vim
  source ~/.config/nvim/plugin/todo.vim
 

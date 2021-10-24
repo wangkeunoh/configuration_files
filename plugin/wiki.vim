@@ -1,4 +1,6 @@
 " local leader key setting
+" 
+"let g:vimwiki_markdown_link_ext = 1
 let maplocalleader = "\\"
 let g:vimwiki_list = [
     \{
@@ -49,9 +51,7 @@ function! NewTemplate()
     endif
 
     let l:template = []
-    call add(l:template, '<!--')
-    call add(l:template, 'title   : ')
-    call add(l:template, 'summary : ')
+    call add(l:template, '# title   : ')
     call add(l:template, 'date    : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
     call add(l:template, 'updated : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
     call add(l:template, 'tags    : ')
