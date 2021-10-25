@@ -8,7 +8,6 @@ sudo apt-get install fzf (https://github.com/junegunn/fzf) \
 sudo apt-get install ripgrep (https://github.com/BurntSushi/ripgrep) \
 sudo apt install universal-ctags
 
-
 ## Install Vim-Plug 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -18,8 +17,6 @@ sudo add-apt-repository 'deb https://typora.io/linux ./'
 sudo apt update  
 sudo apt install typora  
 
-
-
 ## Fecth config files
 cd ~/.config \
 git clone https://github.com/wangkeunoh/configuration_files nvim \
@@ -28,10 +25,8 @@ cp -r tmux ~/.tmux \
 add '. ~/.bashrc' to ~/.bash_profile  in the last line, \
 in order to avoid typing every time source ~/.bashrc in tmux  
 
-
 ## Ref
 https://www.chrisatmachine.com/Neovim/08-fzf/
-
 
 ## trouble shooting
 tmux-onedark-theme.tmux' returned 126 : chmod 777
