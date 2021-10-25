@@ -1,18 +1,23 @@
 " local leader key setting
-let maplocalleader = "\<SPACE>"
+" 
+"let g:vimwiki_markdown_link_ext = 1
+let maplocalleader = "\\"
 let g:vimwiki_list = [
     \{
     \   'path': '~/git_workspace/wangkeunoh.github.io/_wiki/',
     \   'ext' : '.md',
+    \   'syntax' : 'markdown',
     \   'diary_rel_path': '.',
     \},
     \{
     \   'path': '~/Dropbox/p_wiki/',
     \   'ext' : '.md',
+    \   'syntax' : 'markdown',
     \   'diary_rel_path': '.',
     \},
 \]
-let g:vimwiki_conceallevel = 0
+let g:vimwiki_conceallevel = 1
+let g:vimwiki_global_ext = 0
 
 " frequently used key 
 command! WikiIndex :VimwikiIndex
@@ -20,6 +25,7 @@ nmap <LocalLeader>ww <Plug>VimwikiIndex
 nmap <LocalLeader>wi <Plug>VimwikiDiaryIndex
 nmap <LocalLeader>w<LocalLeader>w <Plug>VimwikiMakeDiaryNote
 nmap <LocalLeader>wt :VimwikiTable<CR>
+nmap <LocalLeader>l :VimwikiToggleListItem<CR>
 
 " leader a  키를 누르면 커서가 놓인 단어를 위키에서 검색한다.
 nmap <LocalLeader>a :execute "VWS /" . expand("<cword>") . "/" <Bar> :lopen<CR>
@@ -45,22 +51,12 @@ function! NewTemplate()
     endif
 
     let l:template = []
-    call add(l:template, '---')
-    call add(l:template, 'layout  : wiki')
-    call add(l:template, 'title   : ')
-    call add(l:template, 'summary : ')
+    call add(l:template, '# title   : ')
     call add(l:template, 'date    : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
     call add(l:template, 'updated : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
     call add(l:template, 'tags    : ')
-    call add(l:template, 'toc     : true')
-    call add(l:template, 'public  : true')
     call add(l:template, 'parent  : ')
-    call add(l:template, 'latex   : false')
-    call add(l:template, '---')
-    call add(l:template, '* TOC')
-    call add(l:template, '{:toc}')
-    call add(l:template, '')
-    call add(l:template, '# ')
+    call add(l:template, '-->')
     call setline(1, l:template)
     execute 'normal! G'
     execute 'normal! $'
@@ -73,3 +69,10 @@ augroup vimwikiauto
     autocmd BufWritePre *wiki/*.md call LastModified()
     autocmd BufRead,BufNewFile *wiki/*.md call NewTemplate()
 augroup END
+
+command! Diary VimwikiDiaryIndex
+augroup vimwikigroup
+    autocmd!
+    " automatically update links on read diary
+    autocmd BufRead,BufNewFile diary.wiki VimwikiDiaryGenerateLinks
+augroup end
