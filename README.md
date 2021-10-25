@@ -12,6 +12,13 @@ sudo apt install universal-ctags
 ## Install Vim-Plug 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+## Install useful tool
+wget --no-check-certificate -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -  
+sudo add-apt-repository 'deb https://typora.io/linux ./'  
+sudo apt update  
+sudo apt install typora  
+
+
 
 ## Fecth config files
 cd ~/.config \
