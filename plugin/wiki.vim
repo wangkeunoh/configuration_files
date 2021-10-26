@@ -48,12 +48,13 @@ function! NewTemplate()
     endif
 
     let l:template = []
-    call add(l:template, '# title   : ')
+    call add(l:template, '***')
+    call add(l:template, '# ')
+    call add(l:template, ' ')
+    call add(l:template, '***')
     call add(l:template, 'date    : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
     call add(l:template, 'updated : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
-    call add(l:template, 'tags    : ')
     call add(l:template, 'parent  : ')
-    call add(l:template, '-->')
     call setline(1, l:template)
     execute 'normal! G'
     execute 'normal! $'
