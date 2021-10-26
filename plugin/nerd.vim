@@ -3,8 +3,8 @@
 "                                                  wg_nerd"
 "====================================================================================================================="
 " initialize plugin
-nnoremap <leader><SPACE> :NERDTreeToggle<CR>
-nnoremap <leader>n :NERDTreeFind<CR>
+nnoremap <leader><SPACE> :NERDTreeFind<CR>
+"nnoremap <leader>n :NERDTreeFind<CR>
 
 let g:NERDTreeWinSize=80
 let g:NERDTreeQuitOnOpen = 1
