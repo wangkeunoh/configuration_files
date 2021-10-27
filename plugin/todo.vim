@@ -4,5 +4,6 @@ let maplocalleader = "\\"
 let g:simple_todo_map_keys = 0
 
 " Map your keys
-nmap <LocalLeader>i <Plug>(simple-todo-new)
-nmap <LocalLeader>y <Plug>(simple-todo-mark-as-done)
+map <LocalLeader>i <Plug>(simple-todo-new)
+map <LocalLeader>y <Plug>(simple-todo-mark-as-done)
+

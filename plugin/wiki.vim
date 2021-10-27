@@ -13,7 +13,7 @@ let g:vimwiki_list = [
     \   'diary_rel_path': '.',
     \},
 \]
-let g:vimwiki_conceallevel = 1
+let g:vimwiki_conceallevel = 0
 let g:vimwiki_global_ext = 0
 
 " frequently used key 
@@ -31,16 +31,16 @@ nmap <LocalLeader>b :execute "VWB" <Bar> :lopen<CR>
 
 function! LastModified()
     if &modified
+        " echo('markdown updated time modified')
         let save_cursor = getpos(".")
         let n = min([10, line("$")])
         keepjumps exe '1,' . n . 's#^\(.\{,10}updated\s*: \).*#\1' .
-              \ strftime('%Y-%m-%d %H:%M:%S +0900') . '#e'
+            \ strftime('%Y-%m-%d %H:%M:%S +0900') . '#e'
         call histdel('search', -1)
         call setpos('.', save_cursor)
     endif
 endfun
 autocmd BufWritePre *.md call LastModified()
-
 
 function! NewTemplate()
     if line("$") > 1
@@ -48,24 +48,33 @@ function! NewTemplate()
     endif
 
     let l:template = []
-    call add(l:template, '***')
-    call add(l:template, '# ')
-    call add(l:template, ' ')
-    call add(l:template, '***')
+    call add(l:template, '---')
+    call add(l:template, 'title   : ')
     call add(l:template, 'date    : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
     call add(l:template, 'updated : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
+    call add(l:template, 'tags    : ')
+    call add(l:template, 'toc     : true')
     call add(l:template, 'parent  : ')
+    call add(l:template, '---')
+    call add(l:template, '* TOC')
+    call add(l:template, '{:toc}')
+    call add(l:template, '')
+    call add(l:template, '***')
+    call add(l:template, '# ')
+    call add(l:template, '***')
     call setline(1, l:template)
     execute 'normal! G'
     execute 'normal! $'
 
     echom 'new wiki page has created'
 endfunction
+
+
 autocmd BufRead,BufNewFile *.md call NewTemplate()
 
 augroup vimwikiauto
-    autocmd BufWritePre *wiki/*.md call LastModified()
-    autocmd BufRead,BufNewFile *wiki/*.md call NewTemplate()
+    autocmd BufWritePre *.md call LastModified()
+    autocmd BufRead,BufNewFile *.md call NewTemplate()
 augroup END
 
 command! Diary VimwikiDiaryIndex
