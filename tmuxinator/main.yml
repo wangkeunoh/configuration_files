@@ -53,3 +53,6 @@ windows:
         panes:
             - vi ~/handmade_tool/autoRename3.py
     - terminal: 
+
+    - KinGoodWiki: 
+            - vi 
