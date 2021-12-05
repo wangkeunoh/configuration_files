@@ -12,6 +12,9 @@ nnoremap <leader>fg :GFiles<CR>
 nnoremap <leader>sp :Rg<CR>
 " Open
 nnoremap <leader>ot :terminal<CR>
+" Buffers
+nnoremap <leader>bb :Buffers<CR>
+
 " Window 
 nnoremap <leader>ws :split<CR>
 nnoremap <leader>wv :vsplit<CR>
@@ -28,6 +31,9 @@ nnoremap <F9> :%s/zzzz/　　/g<CR>
 " selet all
 nnoremap <C-A> ggVG
 nnoremap <F1> :TagbarToggle<CR>
+nnoremap <F6> :execute "VWS /" . expand("<cword>") . "/" <Bar> :lopen<CR>
+nnoremap <F7> :put =expand('%:p')<CR>
+
 
 "
 ":%s/owg/　/gc

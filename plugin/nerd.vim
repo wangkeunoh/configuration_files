@@ -4,7 +4,6 @@
 "====================================================================================================================="
 " initialize plugin
 nnoremap <leader><SPACE> :NERDTreeFind<CR>
-"nnoremap <leader>n :NERDTreeFind<CR>
 
 let g:NERDTreeWinSize=80
 let g:NERDTreeQuitOnOpen = 1

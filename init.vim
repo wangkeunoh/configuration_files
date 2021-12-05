@@ -24,9 +24,9 @@ set mouse=a                         " enable mouse interaction.
 set history=1000                    " increase history size.
 set cursorline                      " show the current line.
 set synmaxcol=160
-set tabstop=2                       " tabs with 4 spaces.
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4                       " tabs with 4 spaces.
+set shiftwidth=4
+set softtabstop=4
 set shiftround
 set expandtab                       " inserts spaces indest <Tab>s.
 set autoread                        " autoReload if a file is modified
