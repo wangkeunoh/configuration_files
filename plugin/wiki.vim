@@ -16,7 +16,7 @@ let g:vimwiki_list = [
     \   'diary_rel_path': '.',
     \},
 \]
-let g:vimwiki_conceallevel = 1
+let g:vimwiki_conceallevel = 0
 let g:vimwiki_global_ext = 0
 
 " frequently used key 
@@ -51,12 +51,16 @@ function! NewTemplate()
     endif
 
     let l:template = []
-    call add(l:template, '# title   : ')
     call add(l:template, 'date    : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
     call add(l:template, 'updated : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
-    call add(l:template, 'tags    : ')
-    call add(l:template, 'parent  : ')
-    call add(l:template, '-->')
+    call add(l:template, '* TOC')
+    call add(l:template, '{:toc}')
+    call add(l:template, '')
+    call add(l:template, '***')
+    call add(l:template, '# ')
+    call add(l:template, '## ')
+    call add(l:template, '### ')
+    call add(l:template, '***')
     call setline(1, l:template)
     execute 'normal! G'
     execute 'normal! $'
