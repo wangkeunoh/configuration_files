@@ -1,0 +1,27 @@
+" ripgrep 
+function! RgDir(isFullScreen, args)
+    let l:restArgs = [a:args]
+
+    let l:restArgs = split(l:restArgs[0], '-pattern=', 1)
+    let l:pattern = join(l:restArgs[1:], '')
+
+    let l:restArgs = split(l:restArgs[0], '-path=', 1)
+    let l:path = trim(l:restArgs[1])
+
+    let file_name = expand('%:t:r')
+    let transformer = "| awk -F: 'BEGIN { OFS = FS } {$3 = $3 \":filename:\" $2 \":\" $3; print}'"
+    "others
+    "call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " .. shellescape(l:pattern), 1, {'dir': l:path}, a:isFullScreen)
+    "my
+    "fzf#vim#grep(command, [has_column bool], [spec dict], [fullscreen bool])
+    call fzf#vim#grep(
+                \ "rg --column --line-number --no-heading --color=always --smart-case "..shellescape(l:pattern)..transformer,
+                \ 1,  
+                \ fzf#vim#with_preview({'dir' : l:path, 'options': '--delimiter=: --with-nth=4..'}),
+                \1)
+endfunction
+
+" the path param sgould not have `-pattern=`
+command! -bang -nargs=+ -complete=dir RgD call RgDir(<bang>0, <q-args>)
+noremap <leader>rgr :RgD -path=/media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/RIO/  -pattern=
+noremap <leader>rgs :RgD -path=/media/wangkeun/hardDisk/perforce/GA_RIL_WangkeunOh_LinuxPc2_Source/SOLO/  -pattern=

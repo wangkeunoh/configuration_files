@@ -1,6 +1,6 @@
-# /home/wangkeun/.config/tmuxinator/main.yml
+# /home/wangkeun/.config/tmuxinator/wiki.yml
 
-name: main
+name: wiki
 root: ~/
 
 # Optional tmux socket
@@ -40,14 +40,6 @@ root: ~/
 # attach: false
 
 windows:
-  - git_workspace: 
-      - cd ~/git_workspace
-  - config: 
-      layout: even-vertical
-      panes: 
-        - vim ~/.config/tmuxinator/ 
-        - vim ~/.config/nvim/
-
-  - pwiki:
-      - cd ~/Dropbox/p_wiki
+  - wiki:  
+      - vi
   - terminal: 
