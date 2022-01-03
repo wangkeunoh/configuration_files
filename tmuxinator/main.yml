@@ -56,3 +56,5 @@ windows:
 
     - KinGoodWiki: 
             - vi 
+    - Programming: 
+            - cd ~/git_workspace/Programming/ 
