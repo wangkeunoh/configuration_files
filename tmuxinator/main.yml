@@ -50,4 +50,11 @@ windows:
 
   - pwiki:
       - cd ~/Dropbox/p_wiki
+
+  - programming:
+      - cd ~/git_workspace/Programming
+
+  - compile_build:
+
+      - cd ~/git_workspace/Programming
   - terminal: 
