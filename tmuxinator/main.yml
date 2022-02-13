@@ -55,6 +55,18 @@ windows:
       - cd ~/git_workspace/Programming
 
   - compile_build:
-
       - cd ~/git_workspace/Programming
+
   - terminal: 
+      layout: even-horizontal
+      panes: 
+        - cd ~/
+        - cd ~/
+
+  - combine: 
+      layout: titled
+      panes: 
+        - vim ~/Dropbox/p_wiki/index.md
+        - vim ~/Dropbox/p_wiki/index.md
+        - vim ~/Dropbox/p_wiki/index.md
+        - vim ~/Dropbox/p_wiki/index.md

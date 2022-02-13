@@ -61,8 +61,8 @@ nnoremap<C-h> :bprevious<CR>
 nnoremap<C-l> :bnext<CR>
 
 "window close
-nnoremap q :q!<CR>
-nnoremap s :w<CR>
+map q :q!<CR>
+map s :w<CR>
 
 "buffer close
 map t :bp <BAR> bd #<CR>
