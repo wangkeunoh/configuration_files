@@ -51,6 +51,14 @@ windows:
   - pwiki:
       - cd ~/Dropbox/p_wiki
 
+  - pwiki2: 
+      layout: titled
+      panes: 
+        - vim ~/Dropbox/p_wiki/index.md
+        - vim ~/Dropbox/p_wiki/index.md
+        - vim ~/Dropbox/p_wiki/index.md
+        - vim ~/Dropbox/p_wiki/index.md
+
   - programming:
       - cd ~/git_workspace/Programming
 
@@ -62,11 +70,3 @@ windows:
       panes: 
         - cd ~/
         - cd ~/
-
-  - combine: 
-      layout: titled
-      panes: 
-        - vim ~/Dropbox/p_wiki/index.md
-        - vim ~/Dropbox/p_wiki/index.md
-        - vim ~/Dropbox/p_wiki/index.md
-        - vim ~/Dropbox/p_wiki/index.md
