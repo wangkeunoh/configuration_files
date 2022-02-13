@@ -4,6 +4,7 @@
 "====================================================================================================================="
 " initialize plugin
 nnoremap <leader><SPACE> :NERDTreeFind<CR>
+"nnoremap <leader><SPACE> :NERDTreeToggle<CR>
 "nnoremap <leader>n :NERDTreeFind<CR>
 
 let NERDTreeMinimalUI = 1
