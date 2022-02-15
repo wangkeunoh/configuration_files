@@ -62,6 +62,13 @@ nnoremap<C-l> :bnext<CR>
 "buffer close
 map t :bp <BAR> bd #<CR>
 
+"window close
+map s :w<CR>
+map q :q!<CR>
+
+"pane close when vi command mode
+nnoremap q :q<CR>
+
 "tagbar width
 let g:tagbar_width=40
 
