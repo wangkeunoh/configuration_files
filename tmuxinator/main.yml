@@ -62,6 +62,9 @@ windows:
   - programming:
       - cd ~/git_workspace/Programming
 
+  - programming2:
+      - cd ~/git_workspace/Programming
+
   - compile_build:
       - cd ~/git_workspace/Programming
 

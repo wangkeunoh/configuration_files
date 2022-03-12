@@ -20,8 +20,20 @@ nnoremap <leader>wj <C-w>J
 nnoremap <leader>wk <C-w>K
 nnoremap <leader>wl <C-w>L
 
+" Function for search in vimwiki
+function! VimwikiFindIncompleteTasks()
+  lvimgrep /- \[ \]/ %:p
+  lopen
+endfunction
+function! VimwikiFindAllIncompleteTasks()
+  VimwikiSearch /- \[ \]/
+  lopen
+endfunction
+
 " Remap keys
 nnoremap <F1> :TagbarToggle<CR>
+nnoremap <F2> :call VimwikiFindAllIncompleteTasks()<CR>
+nnoremap <F3> :call VimwikiFindIncompleteTasks()<CR>
 
 " Normal mode
 nnoremap <C-Down> :m .+1<CR>==
