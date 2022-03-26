@@ -10,7 +10,7 @@ let g:vimwiki_list = [
     \   'diary_rel_path': '.',
     \},
     \{
-    \   'path': '~/Dropbox/p_wiki/',
+    \   'path': '~/git_workspace/p_wiki/',
     \   'ext' : '.md',
     \   'syntax' : 'markdown',
     \   'diary_rel_path': '.',
