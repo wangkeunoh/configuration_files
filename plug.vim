@@ -38,3 +38,5 @@ Plug 'vimwiki/vimwiki'
 Plug 'mhinz/vim-startify'
 Plug 'vitalk/vim-simple-todo'
 let g:simple_todo_tick_symbol = '*'
+"regarding tags
+Plug 'ludovicchabant/vim-gutentags'
