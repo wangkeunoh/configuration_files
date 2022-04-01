@@ -44,3 +44,6 @@ windows:
   - ros_search: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/RIO/
   - sos: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/SOLO/
   - sos_search: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/SOLO/
+  - modification: 
+  - modification2: 
+  - rild: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/VENDOR/SOLO/Common/vendor/samsung/hardware/vendor/ril/  

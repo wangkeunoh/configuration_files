@@ -55,6 +55,15 @@ windows:
     - terminal: 
 
     - KinGoodWiki: 
-            - vi 
+            - cd ~/git_workspace/KinGoodWiki 
+    - KinGoodWiki2: 
+        layout: titled
+        panes: 
+            - vim ~/git_workspace/KinGoodWiki/index.md
+            - vim ~/git_workspace/KinGoodWiki/index.md
+            - vim ~/git_workspace/KinGoodWiki/index.md
+            - vim ~/git_workspace/KinGoodWiki/index.md
     - Programming: 
             - cd ~/git_workspace/Programming/ 
+    - Push_Build: 
+            - cd ~/psdkWorkspace/F711U/android/hardware/ril/secril/

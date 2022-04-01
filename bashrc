@@ -192,3 +192,9 @@ cb() {
 }
 function cbf() { cat "$1" | cb; }
 #--------------------------------------------------------------------------------------------
+
+# { psdk-cli
+export PSDK_CLI_HOME=/home-mc/wangkeun.oh/git_workspace/psdk-cli  # psdk-cli
+[ -f "$PSDK_CLI_HOME/configs/psdk-cli-autocomplete.bash" ] && source "$PSDK_CLI_HOME/configs/psdk-cli-autocomplete.bash"
+export PATH=$PATH:$PSDK_CLI_HOME  # psdk-cli path
+# psdk-cli }
