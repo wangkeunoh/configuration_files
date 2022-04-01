@@ -53,6 +53,10 @@ windows:
         panes:
             - vi ~/handmade_tool/autoRename3.py
     - terminal: 
+        layout: even-horizontal
+        panes: 
+            - cd ~/
+            - cd ~/
 
     - KinGoodWiki: 
             - cd ~/git_workspace/KinGoodWiki 
@@ -65,5 +69,11 @@ windows:
             - vim ~/git_workspace/KinGoodWiki/index.md
     - Programming: 
             - cd ~/git_workspace/Programming/ 
-    - Push_Build: 
+    - rild: 
             - cd ~/psdkWorkspace/F711U/android/hardware/ril/secril/
+    - Push_Build: 
+        layout: even-horizontal
+        panes: 
+            - cd ~/psdkWorkspace/F711U/android/hardware/ril/secril/
+            - cd ~/psdkWorkspace/F711U/android/hardware/ril/secril/
+
