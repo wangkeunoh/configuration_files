@@ -9,12 +9,17 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-let g:fzf_tags_command = 'ctags -R'
 " Border color
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-let $FZF_DEFAULT_COMMAND="rg --files --hidden"
+
+" below is very intersting and important when FZF_DEFAULT_COMMAND not exists
+" then excute  below
+" find . -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//
+"
+"let $FZF_DEFAULT_COMMAND="rg --files --follow --hidden"
+let $FZF_DEFAULT_COMMAND="find -L * -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null"
 
 "Get Files
 command! -bang -nargs=? -complete=dir Files
