@@ -63,8 +63,8 @@ nnoremap<C-l> :bnext<CR>
 map t :bp <BAR> bd #<CR>
 
 "window close
-map s :w<CR>
-map q :q!<CR>
+nnoremap <leader>qq :q!<CR>
+nnoremap <leader>ss :w<CR>
 
 "pane close when vi command mode
 nnoremap q :q<CR>
