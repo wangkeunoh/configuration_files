@@ -57,23 +57,16 @@ windows:
         panes: 
             - cd ~/
             - cd ~/
-
-    - KinGoodWiki: 
+    - kinGoodWiki: 
             - cd ~/git_workspace/KinGoodWiki 
-    - KinGoodWiki2: 
+    - kinGoodWiki2: 
         layout: titled
         panes: 
             - vim ~/git_workspace/KinGoodWiki/index.md
             - vim ~/git_workspace/KinGoodWiki/index.md
             - vim ~/git_workspace/KinGoodWiki/index.md
             - vim ~/git_workspace/KinGoodWiki/index.md
-    - Programming: 
+    - programming: 
             - cd ~/git_workspace/Programming/ 
-    - rild: 
-            - cd ~/psdkWorkspace/F711U/android/hardware/ril/secril/
-    - Push_Build: 
-        layout: even-horizontal
-        panes: 
-            - cd ~/psdkWorkspace/F711U/android/hardware/ril/secril/
-            - cd ~/psdkWorkspace/F711U/android/hardware/ril/secril/
-
+    - build: 
+            - cd ~/git_workspace/Programming/ 

@@ -47,3 +47,13 @@ windows:
   - modification: 
   - modification2: 
   - rild: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/VENDOR/SOLO/Common/vendor/samsung/hardware/vendor/ril/  
+  - psdk_code1: 
+          - cd ~/psdkWorkspace/
+  - psdk_code2: 
+          - cd ~/psdkWorkspace/
+  - Push_Build: 
+      layout: even-horizontal
+      panes: 
+          - cd ~/psdkWorkspace/
+          - cd ~/psdkWorkspace/
+
