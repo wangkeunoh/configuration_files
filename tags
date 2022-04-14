@@ -165,9 +165,11 @@ $FZF_DEFAULT_OPTS	plugin/fzf.vim	/^let $FZF_DEFAULT_OPTS='--bind=alt-a:select-al
 <leader>fg	plugin/keybindings.vim	/^nnoremap <leader>fg :GFiles<CR>$/;"	m
 <leader>ot	plugin/keybindings.vim	/^nnoremap <leader>ot :terminal<CR>$/;"	m
 <leader>qf	plugin/coc.vim	/^nmap <leader>qf  <Plug>(coc-fix-current)$/;"	m
+<leader>qq	init.vim	/^nnoremap <leader>qq :q!<CR>$/;"	m
 <leader>re	plugin/lang/clojure.vim	/^noremap <leader>re :Eval<CR>$/;"	m
 <leader>rn	plugin/coc.vim	/^nmap <leader>rn <Plug>(coc-rename)$/;"	m
 <leader>sp	plugin/keybindings.vim	/^nnoremap <leader>sp :Rg<CR>$/;"	m
+<leader>ss	init.vim	/^nnoremap <leader>ss :w<CR>$/;"	m
 <leader>wh	plugin/keybindings.vim	/^nnoremap <leader>wh <C-w>H$/;"	m
 <leader>wj	plugin/keybindings.vim	/^nnoremap <leader>wj <C-w>J$/;"	m
 <leader>wk	plugin/keybindings.vim	/^nnoremap <leader>wk <C-w>K$/;"	m
@@ -390,12 +392,10 @@ p + ul	newsprint.css	/^p + ul,$/;"	s
 pre	github.css	/^    pre {$/;"	s
 pre	newsprint.css	/^pre {$/;"	s
 pre	newsprint.css	/^pre,$/;"	s
-q	init.vim	/^map q :q!<CR>$/;"	m
 q	init.vim	/^nnoremap q :q<CR>$/;"	m
 q	newsprint.css	/^q {$/;"	s
 q:after	newsprint.css	/^q:after {$/;"	s
 q:before	newsprint.css	/^q:before,$/;"	s
-s	init.vim	/^map s :w<CR>$/;"	m
 s:check_back_space	plugin/coc.vim	/^function! s:check_back_space() abort$/;"	f
 s:show_documentation	plugin/coc.vim	/^function! s:show_documentation()$/;"	f
 set	tmux/plugins/tmux-onedark-theme/tmux-onedark-theme.tmux	/^set() {$/;"	f
