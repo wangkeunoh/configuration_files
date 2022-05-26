@@ -304,7 +304,6 @@ g:workspace_autosave	plugin/vim-workspace.vim	/^let g:workspace_autosave = 0$/;"
 g:workspace_autosave_untrailspaces	plugin/vim-workspace.vim	/^let g:workspace_autosave_untrailspaces = 0$/;"	v
 g:workspace_persist_undo_history	plugin/vim-workspace.vim	/^let g:workspace_persist_undo_history = 0$/;"	v
 gd	plugin/coc.vim	/^nmap <silent> gd <Plug>(coc-definition)$/;"	m
-get	tmux/plugins/tmux-onedark-theme/tmux-onedark-theme.tmux	/^get() {$/;"	f
 gi	plugin/coc.vim	/^nmap <silent> gi <Plug>(coc-implementation)$/;"	m
 gr	plugin/coc.vim	/^nmap <silent> gr <Plug>(coc-references)$/;"	m
 gy	plugin/coc.vim	/^nmap <silent> gy <Plug>(coc-type-definition)$/;"	m
@@ -398,8 +397,6 @@ q:after	newsprint.css	/^q:after {$/;"	s
 q:before	newsprint.css	/^q:before,$/;"	s
 s:check_back_space	plugin/coc.vim	/^function! s:check_back_space() abort$/;"	f
 s:show_documentation	plugin/coc.vim	/^function! s:show_documentation()$/;"	f
-set	tmux/plugins/tmux-onedark-theme/tmux-onedark-theme.tmux	/^set() {$/;"	f
-setw	tmux/plugins/tmux-onedark-theme/tmux-onedark-theme.tmux	/^setw() {$/;"	f
 t	init.vim	/^map t :bp <BAR> bd #<CR>$/;"	m
 table	github.css	/^    table,$/;"	s
 table	github.css	/^table {$/;"	s
