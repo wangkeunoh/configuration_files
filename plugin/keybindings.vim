@@ -8,8 +8,6 @@ nnoremap <ESC> :nohl<CR>
 " Files
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fg :GFiles<CR>
-" Search
-nnoremap <leader>sp :Rg<CR>
 " Open
 nnoremap <leader>ot :terminal<CR>
 " Window 

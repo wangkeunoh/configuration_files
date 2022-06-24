@@ -40,6 +40,19 @@ root: ~/
 # attach: false
 
 windows:
-  - wiki:  
-      - vi
-  - terminal: 
+  - kingoodwiki:
+      panes: 
+        - vim ~/git_workspace/KinGoodWiki/index.md
+
+  - kingoodwiki2: 
+      layout: titled
+      panes: 
+        - vim ~/git_workspace/KinGoodWiki/index.md
+        - vim ~/git_workspace/KinGoodWiki/index.md
+        - vim ~/git_workspace/KinGoodWiki/index.md
+        - vim ~/git_workspace/KinGoodWiki/index.md
+  - search: 
+      panes: 
+        - cd ~/git_workspace/KinGoodWiki 
+
+

@@ -15,6 +15,12 @@ let g:vimwiki_list = [
     \   'syntax' : 'markdown',
     \   'diary_rel_path': '.',
     \},
+    \{
+    \   'path': '~/git_workspace/KinGoodWiki/',
+    \   'ext' : '.md',
+    \   'syntax' : 'markdown',
+    \   'diary_rel_path': '.',
+    \}
 \]
 let g:vimwiki_conceallevel = 0
 let g:vimwiki_global_ext = 0
