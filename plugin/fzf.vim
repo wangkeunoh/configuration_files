@@ -29,7 +29,8 @@ command! -bang -nargs=? -complete=dir Files
 
 let g:fzf_tags_command = 'ctags -R'
 
-nmap <F2> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/RIO/<CR>
+"nmap <F2> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/RIO/<CR>
+nmap <F2> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/TIGER/<CR>
 nmap <F3> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/SOLO/<CR>
 nmap <F4> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/VENDOR/<CR>
 nmap <F5> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/VENDOR_OS_UP/<CR>

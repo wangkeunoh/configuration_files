@@ -127,7 +127,7 @@ $FZF_DEFAULT_OPTS	plugin/fzf.vim	/^let $FZF_DEFAULT_OPTS='--bind=alt-a:select-al
 <ESC>	plugin/keybindings.vim	/^nnoremap <ESC> :nohl<CR>$/;"	m
 <F12>	plugin/keybindings.vim	/^map <F12> :%s\/^.*\\| \/\/g<CR>$/;"	m
 <F1>	plugin/keybindings.vim	/^nnoremap <F1> :TagbarToggle<CR>$/;"	m
-<F2>	plugin/fzf.vim	/^nmap <F2> :Files \/home-mc\/wangkeun.oh\/Perforce\/GA_RIL_WangkeunOh_VdiLinuxPc_Source\/RIO\/<CR/;"	m
+<F2>	plugin/fzf.vim	/^nmap <F2> :Files \/home-mc\/wangkeun.oh\/Perforce\/GA_RIL_WangkeunOh_VdiLinuxPc_Source\/TIGER\/</;"	m
 <F3>	plugin/fzf.vim	/^nmap <F3> :Files \/home-mc\/wangkeun.oh\/Perforce\/GA_RIL_WangkeunOh_VdiLinuxPc_Source\/SOLO\/<C/;"	m
 <F4>	plugin/fzf.vim	/^nmap <F4> :Files \/home-mc\/wangkeun.oh\/Perforce\/GA_RIL_WangkeunOh_VdiLinuxPc_Source\/VENDOR\//;"	m
 <F5>	plugin/fzf.vim	/^nmap <F5> :Files \/home-mc\/wangkeun.oh\/Perforce\/GA_RIL_WangkeunOh_VdiLinuxPc_Source\/VENDOR_O/;"	m
