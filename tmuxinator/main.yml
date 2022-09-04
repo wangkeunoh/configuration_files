@@ -51,14 +51,6 @@ windows:
   - pwiki:
       - cd ~/git_workspace/p_wiki
 
-  - pwiki2: 
-      layout: titled
-      panes: 
-        - vim ~/git_workspace/p_wiki/index.md
-        - vim ~/git_workspace/p_wiki/index.md
-        - vim ~/git_workspace/p_wiki/index.md
-        - vim ~/git_workspace/p_wiki/index.md
-
   - programming:
       - cd ~/git_workspace/Programming
 
