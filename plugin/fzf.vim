@@ -1,8 +1,7 @@
 "====================================================================================================================="
 "                                                  wg_init                                                            "
 "====================================================================================================================="
-map <C-f> :Files<CR>
-
+map <C-f> :call SearchBranchFzf()<CR>
 " This is the default extra key bindings, at popup view
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -30,10 +29,34 @@ command! -bang -nargs=? -complete=dir Files
 let g:fzf_tags_command = 'ctags -R'
 
 "nmap <F2> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/RIO/<CR>
-nmap <F2> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/TIGER/<CR>
-nmap <F3> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/SOLO/<CR>
-nmap <F4> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/VENDOR/<CR>
-nmap <F5> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/VENDOR_OS_UP/<CR>
+"nmap <F2> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/TIGER/<CR>
+"nmap <F3> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/SOLO/<CR>
+"nmap <F4> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/VENDOR/<CR>
+"nmap <F5> :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/VENDOR_OS_UP/<CR>
+"
 
 let $FZF_DEFAULT_OPTS='--bind=alt-a:select-all,alt-d:deselect-all'
+
+function SearchBranchFzf()
+  let curline = getline('.')
+  call inputsave()
+  let branch = input('which branch you want for fzf ? ')
+  call inputrestore()
+
+  if strlen(branch) < 1
+    :Files
+  elseif branch ==? 'tiger'
+    :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/TIGER/
+  elseif branch ==? 'solo'
+    :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/SOLO/
+  elseif branch ==? 'etc'
+    :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/ETC/RIL/VENDOR/
+  elseif branch ==? 'import'
+    :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/IMPORT/
+  else
+    echo 'not match any branch'
+
+  endif
+
+endfunction
 

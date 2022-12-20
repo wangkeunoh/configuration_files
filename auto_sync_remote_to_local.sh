@@ -5,3 +5,6 @@ cp tmux.conf /home-mc/wangkeun.oh/.tmux.conf
 cp -r tmuxinator /home-mc/wangkeun.oh/.config/
 cp newsprint.css /home-mc/wangkeun.oh/.config/Typora/themes/
 cp github.css /home-mc/wangkeun.oh/.config/Typora/themes/
+cp autoDecrypt.py /home-mc/wangkeun.oh/.config/nvim/
+cp autoRename3.py /home-mc/wangkeun.oh/.config/nvim/
+

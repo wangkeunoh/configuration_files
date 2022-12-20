@@ -78,6 +78,9 @@ nnoremap <down> :resize resize -5<CR>
 nnoremap <up> :resize +5<CR>
 nnoremap <right> :vertical resize +5<CR>
 
+" get current directory path in nerd
+autocmd vimenter * silent! lcd %:p:h
+
 "============================================================================================"
 "                                                              end                           "
 "============================================================================================"
