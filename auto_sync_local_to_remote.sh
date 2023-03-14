@@ -7,4 +7,5 @@ cp -r /home-mc/wangkeun.oh/.config/Typora/themes/newsprint.css ./
 cp -r /home-mc/wangkeun.oh/.config/Typora/themes/github.css ./
 cp -r /home-mc/wangkeun.oh/handmade_tool/autoDecrypt.py
 cp -r /home-mc/wangkeun.oh/handmade_tool/autoRename3.py
+cp -r /home-mc/wangkeun.oh/handmade_tool/wg_make.sh
 git status
