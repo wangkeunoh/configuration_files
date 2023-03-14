@@ -5,6 +5,6 @@ cp /home-mc/wangkeun.oh/.tmux.conf tmux.conf
 cp -r /home-mc/wangkeun.oh/.config/tmuxinator ./
 cp -r /home-mc/wangkeun.oh/.config/Typora/themes/newsprint.css ./
 cp -r /home-mc/wangkeun.oh/.config/Typora/themes/github.css ./
-cp -r /home-mc/wangkeun.oh/handmade_tool/
-cp -r /home-mc/wangkeun.oh/handmade_tool/* ./
+cp -r /home-mc/wangkeun.oh/handmade_tool/autoDecrypt.py
+cp -r /home-mc/wangkeun.oh/handmade_tool/autoRename3.py
 git status

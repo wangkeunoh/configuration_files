@@ -24,7 +24,7 @@ p7 = re.compile('.*radio_log.*')
 p8 = re.compile('^\d{6}.*-\d{2}.*-\d{2}')
 p9 = re.compile('.*onEnableApn:.*so return')
 p10 = re.compile('.*onEnableApn:.*apnType=.*')
-
+p11 = re.compile('.*AndroidRuntime.*android.*.*phone.*')
 #p5 = re.compile('.*mAllApnSettings\[')
                   #mAllApnSettings size=5
 
@@ -44,9 +44,9 @@ def autoAnalyzer_for_setting(given_name):
        #    f_analysis_setting.write(line.strip() + '\n')
         if ('- setDataRoamingEnabled change' in line):
             f_analysis_setting.write(line.strip() + '\n')
-        if ('- InternalDataEnabled change' in line):
+        if ('onUserMobileDataStateChanged' in line):
             f_analysis_setting.write(line.strip() + '\n')
-        if ('ReceiveMessage: svc' in line):
+        if ('- InternalDataEnabled change' in line):
             f_analysis_setting.write(line.strip() + '\n')
     f_analysis_setting.close()
     print("autoAnalyzer_for_setting done!")
@@ -64,7 +64,8 @@ def autoAnalyzer_for_epdg(given_name):
         if not line: break
         if ('EPDG --' in line):
             f_analysis_epdg.write(line.strip() + '\n')
-    f_analysis_epdg.close()
+        if ('ro.telephony.iwlan_operation_mode' in line):
+            f_analysis_epdg.write(line.strip() + '\n')
     print("autoAnalyzer_for_epdg done!")
 #json
 def autoAnalyzer_for_json(given_name):
@@ -97,6 +98,8 @@ def autoAnalyzer_for_fc(given_name):
         line = f_ori.readline()
         if not line: break
         if ('AndroidRuntime:' in line):
+            f_analysis_fc.write(line.strip() + '\n')
+        if ('java.lang.SecurityException' in line):
             f_analysis_fc.write(line.strip() + '\n')
     f_analysis_fc.close()
     print("autoAnalyzer_for_fc done!")
@@ -139,6 +142,8 @@ def autoAnalyzer_for_attach(given_name):
             f_analysis_attach.write(line.strip() + '\n')
         if ('[ril.attach.apn] ' in line):
             f_analysis_attach.write(line.strip() + '\n')
+        if ('- setInitialAttachApn: X selected Apn' in line):
+            f_analysis_attach.write(line.strip() + '\n')
 
     f_analysis_attach.close()
     print("autoAnalyzer_for_attach done!")
@@ -178,18 +183,15 @@ def autoAnalyzer_for_simmanager(given_name):
     while True:
         line = f_ori.readline()
         if not line: break
-
         if ('SimManager' in line):
             f_analysis_simmanager.write(line.strip() + '\n')
         elif ('android.telephony.action.SIM_CARD_STATE_CHANGED' in line):
             f_analysis_simmanager.write(line.strip() + '\n')
         elif ('onSimStateUpdated:' in line):
             f_analysis_simmanager.write(line.strip() + '\n')
-        elif ('getRequestOverride : RequestOverride(mState = OVERRIDE' in line):
-            f_analysis_simmanager.write(line.strip() + '\n')
-        elif ('getRequestOverride : RequestOverride(mState = RESTORE' in line):
-            f_analysis_simmanager.write(line.strip() + '\n')
         elif ('onDataConnectionStateChanged: state=' in line):
+            f_analysis_simmanager.write(line.strip() + '\n')
+        elif ('isMultiSimModel :' in line):
             f_analysis_simmanager.write(line.strip() + '\n')
     f_analysis_simmanager.close()
     print("autoAnalyzer_for_simmanager done!")
@@ -203,6 +205,10 @@ def autoAnalyzer_for_pdn_open(given_name):
 
     f_analysis_pdn_open= open(given_name + "_wg_pdn_open" , 'w')
     f_ori = open("./" + given_name, 'r')
+
+    f_analysis_pdn_open.write('PdnController<0>: onPreciseDataConnectionStateChanged' + '\n')
+    f_analysis_pdn_open.write('PdnController<0>: onDataConnectionStateChanged:' + '\n')
+    f_analysis_pdn_open.write('IndicatorLog: [NetworkController.MobileSignalController(0/1)]' + '\n')
     while True:
         line = f_ori.readline()
         if not line: break
@@ -219,7 +225,10 @@ def autoAnalyzer_for_pdn_open(given_name):
             f_analysis_pdn_open.write(line.strip() + '\n')
         elif ('DCT-C   : onDataSetupComplete: success apn=' in line):
             f_analysis_pdn_open.write(line.strip() + '\n')
-
+        elif ('- onSetupConnectionCompleted result=' in line):
+            f_analysis_pdn_open.write(line.strip() + '\n')
+        elif ('SET_MOBILE_DATA_SETTING with mobile data setting' in line):
+            f_analysis_pdn_open.write(line.strip() + '\n')
     f_analysis_pdn_open.close()
     print("autoAnalyzer_for_pdn_open done!")
 
@@ -266,43 +275,84 @@ def autoAnalyzer_for_signalcontroller(given_name):
     print("autoAnalyzer_for_signalcontroller done!")
 
 
-def autoAnalyzer_for_request_dct(given_name):
+def autoAnalyzer_for_request_dct_cs(given_name):
     if ('png' in given_name) : return
     if ('dumpstate_debug_history.lst' in given_name) : return
     if ('dumpstate_log.txt' in given_name) : return
     if ('dumpstate-stats.txt' in given_name) : return
 
-    f_analysis_request_dct= open(given_name + "_wg_request_dct" , 'w')
+    f_analysis_request_dct_cs= open(given_name + "_wg_request_dct_cs" , 'w')
     f_ori = open("./" + given_name, 'r')
     while True:
         line = f_ori.readline()
         if not line: break
 
         if ('completeConnection: successful, notify the world' in line):
-            f_analysis_request_dct.write(line.strip() + '\n')
+            f_analysis_request_dct_cs.write(line.strip() + '\n')
         elif (p9.match(line)):
-            f_analysis_request_dct.write(line.strip() + '\n')
+            f_analysis_request_dct_cs.write(line.strip() + '\n')
         elif (p10.match(line)):
-            f_analysis_request_dct.write(line.strip() + '\n')
-    f_analysis_request_dct.close()
-    print("autoAnalyzer_for_request_dct done!")
+            f_analysis_request_dct_cs.write(line.strip() + '\n')
+        elif ('ConnectivityService: requestNetwork for' in line):
+            f_analysis_request_dct_cs.write(line.strip() + '\n')
+    f_analysis_request_dct_cs.close()
+    print("autoAnalyzer_for_request_dct_cs done!")
 
-def autoAnalyzer_for_request_cs(given_name):
+def autoAnalyzer_for_switch_sim(given_name):
     if ('png' in given_name) : return
     if ('dumpstate_debug_history.lst' in given_name) : return
     if ('dumpstate_log.txt' in given_name) : return
     if ('dumpstate-stats.txt' in given_name) : return
 
-    f_analysis_request_cs= open(given_name + "_wg_request_cs" , 'w')
+    f_analysis_switch_sim= open(given_name + "_wg_switch_sim" , 'w')
     f_ori = open("./" + given_name, 'r')
     while True:
         line = f_ori.readline()
         if not line: break
-
-        if ('ConnectivityService: requestNetwork for' in line):
-            f_analysis_request_cs.write(line.strip() + '\n')
-    f_analysis_request_cs.close()
-    print("autoAnalyzer_for_request done!")
+        if (': Intent.getAction() : android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif (': ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED, subId:' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('DDS-SemPhoneSwitcher: broadcastDdsChangeResult' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('DDS-SemPhoneSwitcher: auto dds is' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('DDS Already was set to slot' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('SubscriptionController: [setDefaultDataSubId] called by' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('SubscriptionController: [broadcastDefaultDataSubIdChanged] subId' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('QMI_DSD_GET_CURRENT_DDS_REQ' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('QMI_DSD_SWITCH_DDS_REQ' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('RxGetDualStandbyPref: current dds =' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('OnGetDualStandbyPrefModemDone(): currentDds =' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('Set SWITCH_PARAM_TEMPORARY owe to ims calling with non dds' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('SET_PREFERRED_DATA_MODEM' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('SettingsProvider: isChangeAllowed()' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('called by com.samsung.telephonyui.callsettings.SamsungTuiCallFunctions' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('DDS change success, PhoneId' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('sendDefaultChangedBroadcast' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('setDefaultDataSubId' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('ALLOW_DATA allowed' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('getRequestOverride : RequestOverride(mState = OVERRIDE' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+        elif ('getRequestOverride : RequestOverride(mState = RESTORE' in line):
+            f_analysis_switch_sim.write(line.strip() + '\n')
+    f_analysis_switch_sim.close()
+    print("autoAnalyzer_for_switch_sim done!")
 
 
 
@@ -367,7 +417,10 @@ def autoAnalyzer_for_rild(given_name):
             f_analysis_rild.write(line.strip() + '\n')
         elif ('SEM_RILJ' in line):
             f_analysis_rild.write(line.strip() + '\n')
-    f_analysis_rild.close()
+        elif ('ril daemon' in line):
+            f_analysis_rild.write(line.strip() + '\n')
+        elif ('DEBUG   : Cmdline: /vendor/bin/hw/rild' in line):
+            f_analysis_rild.write(line.strip() + '\n')
     print("autoAnalyzer_for_rild done!")
 
 #D DCT-C
@@ -720,7 +773,28 @@ def autoAnalyzer_for_ground(given_name):
             f_analysis_ground.write(line.strip() + '\n')
         elif ('carrier_metered_apn_types_strings = ' in line):
             f_analysis_ground.write(line.strip() + '\n')
+        elif ('ro.boot.hardware' in line):
+            f_analysis_ground.write(line.strip() + '\n')
+        elif ('setMobileDataSetting: enabled ' in line):
+            f_analysis_ground.write(line.strip() + '\n')
+        elif ('sys.smf.mnoname' in line):
+            f_analysis_ground.write(line.strip() + '\n')
+        elif ('Modem Reset' in line):
+            f_analysis_ground.write(line.strip() + '\n')
+        elif ('mGid1=' in line):
+            f_analysis_ground.write(line.strip() + '\n')
+        elif ('mGid2=' in line):
+            f_analysis_ground.write(line.strip() + '\n')
+        elif ('D SDMConfig:   ' in line):
+            f_analysis_ground.write(line.strip() + '\n')
+        elif ('setMobileDataEnabled' in line):
+            f_analysis_ground.write(line.strip() + '\n')
+        elif ('DUMP OF SERVICE netpolicy:' in line):
+            f_analysis_ground.write(line.strip() + '\n')
     f_analysis_ground.close()
+
+
+
     print("autoAnalyzer_for_ground done!")
 
         
@@ -860,6 +934,34 @@ def autoAnalyzer_for_data_activity(given_name):
 '''
     #print("autoAnalyzer_for_data_activity done!")
 
+# secril
+
+#/.*androidruntime.*android.*/
+def autoAnalyzer_for_secril(given_name):
+    if ('png' in given_name) : return
+    if ('dumpstate_log.txt' in given_name) : return
+    if ('dumpstate-stats.txt' in given_name) : return
+    if ('dumpstate_debug_history.lst' in given_name) : return
+
+    f_analysis_secril = open(given_name + "_wg_secril", 'w')
+
+    f_ori = open("./" + given_name, 'r')
+    while True:
+        line = f_ori.readline()
+        if not line: break
+
+        if ('due to RILD restart' in line):
+            f_analysis_secril.write(line.strip() + '\n')
+        elif ('LEDC-MGR(' in line):
+            f_analysis_secril.write(line.strip() + '\n')
+
+#p11 = re.compile('.*androidruntime.*android.*.*phone.*')
+        elif (p11.search(line)):
+            f_analysis_secril.write(line.strip() + '\n')
+
+    f_analysis_secril.close()
+    print("autoAnalyzer_for_secril done!")
+
 #monitor
 def autoAnalyzer_for_monitor(given_name):
     if ('png' in given_name) : return
@@ -886,6 +988,8 @@ def autoAnalyzer_for_monitor(given_name):
                 f_analysis_monitor.write('syntax off' + '\n')
                 f_analysis_monitor.write('Historical broadcasts summary [background]:' + '\n')
                 f_analysis_monitor.write('Historical broadcasts summary [foreground]:' + '\n')
+                f_analysis_monitor.write('--------------------------\\n      {mApnType=default' + '\n')
+                f_analysis_monitor.write('History (mobile_data)' + '\n')
                 monitor_set+= 1
             f_analysis_monitor.write(line.strip() + '\n')
         elif ('DUMP OF SERVICE connmetrics:' in line):
@@ -1081,6 +1185,8 @@ def autoAnalyzer_for_fatal(given_name):
             f_analysis_fatal.write(line.strip() + '\n')
         elif ('DEBUG   : backtrace:' in line):
             f_analysis_fatal.write(line.strip() + '\n')
+        elif ('DEBUG   : signal' in line):
+            f_analysis_fatal.write(line.strip() + '\n')
 
 
     f_analysis_fatal.close()
@@ -1216,26 +1322,26 @@ def autoAnalyzer_for_local_log(given_name):
     print("autoAnalyzer_for_local_log done!")
 
 #
-def autoAnalyzer_for_(given_name):
+def autoAnalyzer_for_mtu(given_name):
     if ('png' in given_name) : return
     if ('dumpstate_debug_history.lst' in given_name) : return
     if ('dumpstate_log.txt' in given_name) : return
     if ('dumpstate-stats.txt' in given_name) : return
 
-    f_analysis_deactivate_data_call=  open(given_name + "_wg_deactivate_data_call", 'w')
+    f_analysis_mtu=  open(given_name + "_wg_mtu", 'w')
     f_ori = open("./" + given_name, 'r')
     while True:
         line = f_ori.readline()
         if not line: break
 
-        if ('DEACTIVATE_DATA_CALL' in line):
-            f_analysis_deactivate_data_call.write(line.strip() + '\n')
-        elif ('OnDataCallDisconnected' in line):
-            f_analysis_deactivate_data_call.write(line.strip() + '\n')
+        if ('mtu' in line):
+            f_analysis_mtu.write(line.strip() + '\n')
+        elif ('updatemtu' in line):
+            f_analysis_mtu.write(line.strip() + '\n')
 
-    f_analysis_deactivate_data_call.close()
+    f_analysis_mtu.close()
 
-    print("autoAnalyzer_for_ done!")
+    print("autoAnalyzer_for_mtu done!")
 
 #ril_request
 def autoAnalyzer_for_ril_request(given_name):
@@ -1372,7 +1478,10 @@ def autoAnalyzer_for_ril_qmi(given_name):
             f_analysis_ril_qmi.write(line.strip() + '\n')
         elif ('Toast   : Text' in line):
             f_analysis_ril_qmi.write(line.strip() + '\n')
-
+        elif (': SendMessage: svc' in line):
+            f_analysis_ril_qmi.write(line.strip() + '\n')
+        elif (': ReceiveMessage: svc' in line):
+            f_analysis_ril_qmi.write(line.strip() + '\n')
 
     f_analysis_ril_qmi.close()
     print("autoAnalyzer_for_ril_qmi done!")
@@ -1398,6 +1507,10 @@ def autoAnalyzer_for_mAllApnSettings(given_name):
         elif ('user_editable' in line) :
             f_analysis_mallapnsettings.write('\n')
             f_analysis_mallapnsettings.write(line.strip() + '\n')
+        elif ('mAllApnSettings[' in line) :
+            f_analysis_mallapnsettings.write(line.strip() + '\n')
+        elif ('carrier_metered_apn_types_strings' in line) :
+            f_analysis_mallapnsettings.write(line.strip() + '\n')
 
     f_analysis_mallapnsettings.close()
 
@@ -1412,11 +1525,12 @@ def autoAnalyzer(given_name):
     autoAnalyzer_for_stall(given_name)
     autoAnalyzer_for_roaming(given_name)
     autoAnalyzer_for_dns(given_name)
-    autoAnalyzer_for_data_activity(given_name)
+    #autoAnalyzer_for_data_activity(given_name)
     autoAnalyzer_for_monitor(given_name)
+    autoAnalyzer_for_secril(given_name)
     autoAnalyzer_for_monitor2(given_name)
-    autoAnalyzer_for_voice_call(given_name)
-    autoAnalyzer_for_current_networks(given_name)
+    #autoAnalyzer_for_voice_call(given_name)
+    #autoAnalyzer_for_current_networks(given_name)
     autoAnalyzer_for_dds(given_name)
     autoAnalyzer_for_fatal(given_name)
     autoAnalyzer_for_apm(given_name)
@@ -1436,8 +1550,8 @@ def autoAnalyzer(given_name):
     autoAnalyzer_for_rild(given_name)
     autoAnalyzer_for_gprs(given_name)
     autoAnalyzer_for_cs(given_name)
-    autoAnalyzer_for_request_cs(given_name)
-    autoAnalyzer_for_request_dct(given_name)
+    autoAnalyzer_for_request_dct_cs(given_name)
+    autoAnalyzer_for_switch_sim(given_name)
     autoAnalyzer_for_signalcontroller(given_name)
     autoAnalyzer_for_broadcasting_from_sst(given_name)
     autoAnalyzer_for_pdn_open(given_name)
@@ -1448,7 +1562,7 @@ def autoAnalyzer(given_name):
     autoAnalyzer_for_json(given_name)
     autoAnalyzer_for_epdg(given_name)
     autoAnalyzer_for_setting(given_name)
-
+    autoAnalyzer_for_mtu(given_name)
 
 
     print("autoAnalyze done!")
