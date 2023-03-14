@@ -58,14 +58,14 @@ windows:
             - cd ~/
             - cd ~/
     - kinGoodWiki: 
-            - cd ~/git_workspace/KinGoodWiki 
+            - cd ~/git_workspace/sec_repo/KinGoodWiki 
     - kinGoodWiki2: 
         layout: titled
         panes: 
-            - vim ~/git_workspace/KinGoodWiki/index.md
-            - vim ~/git_workspace/KinGoodWiki/index.md
-            - vim ~/git_workspace/KinGoodWiki/index.md
-            - vim ~/git_workspace/KinGoodWiki/index.md
+            - vim ~/git_workspace/sec_repo/KinGoodWiki/index.md
+            - vim ~/git_workspace/sec_repo/KinGoodWiki/index.md
+            - vim ~/git_workspace/sec_repo/KinGoodWiki/index.md
+            - vim ~/git_workspace/sec_repo/KinGoodWiki/index.md
     - programming: 
             - cd ~/git_workspace/Programming/ 
     - build: 

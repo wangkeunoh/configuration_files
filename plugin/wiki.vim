@@ -7,12 +7,14 @@ let g:vimwiki_list = [
     \   'diary_rel_path': '.',
     \},
     \{
-    \   'path': '~/git_workspace/KinGoodWiki/',
+    \   'path': '/home-mc/wangkeun.oh/git_workspace/sec_repo/KinGoodWiki',
     \   'ext' : '.md',
     \   'syntax' : 'markdown',
     \   'diary_rel_path': '.',
     \},
 \]
+
+
 let g:vimwiki_conceallevel = 0
 let g:vimwiki_global_ext = 0
 
@@ -25,9 +27,9 @@ nmap <LocalLeader>wt :VimwikiTable<CR>
 nmap <LocalLeader>l :VimwikiToggleListItem<CR>
 
 " leader a  키를 누르면 커서가 놓인 단어를 위키에서 검색한다.
-nmap <LocalLeader>a :execute "VWS /" . expand("<cword>") . "/" <Bar> :lopen<CR>
+" nmap <LocalLeader>a :execute "VWS /" . expand("<cword>") . "/" <Bar> :lopen<CR>
 " leader b  키를 누르면 현재 문서를 링크한 모든 문서를 검색한다
-nmap <LocalLeader>b :execute "VWB" <Bar> :lopen<CR>
+"nmap <LocalLeader>b :execute "VWB" <Bar> :lopen<CR>
 
 function! LastModified()
     if &modified

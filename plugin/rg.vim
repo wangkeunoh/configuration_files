@@ -59,7 +59,7 @@ function SearchBranchRg()
   elseif branch ==? 'wiki'
     let word = input('keyword ? ')
     call inputrestore()
-    call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " .. shellescape(word), 1, {'dir':  '/home-mc/wangkeun.oh/git_workspace/KinGoodWiki/'})
+    call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " .. shellescape(word), 1, {'dir':  '/home-mc/wangkeun.oh/git_workspace/sec_repo/KinGoodWiki/'})
   elseif branch ==? 'tiger'
     let word = input('keyword ? ')
     call inputrestore()
