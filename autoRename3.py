@@ -956,8 +956,8 @@ def autoAnalyzer_for_secril(given_name):
             f_analysis_secril.write(line.strip() + '\n')
 
 #p11 = re.compile('.*androidruntime.*android.*.*phone.*')
-        elif (p11.search(line)):
-            f_analysis_secril.write(line.strip() + '\n')
+        #elif (p11.search(line)):
+        #    f_analysis_secril.write(line.strip() + '\n')
 
     f_analysis_secril.close()
     print("autoAnalyzer_for_secril done!")
