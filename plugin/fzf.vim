@@ -53,6 +53,8 @@ function SearchBranchFzf()
     :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/ETC/RIL/VENDOR/
   elseif branch ==? 'import'
     :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/IMPORT/
+  elseif branch ==? 'utah'
+    :Files /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/UTAH/
   else
     echo 'not match any branch'
 

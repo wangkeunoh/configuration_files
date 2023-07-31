@@ -44,8 +44,8 @@ windows:
   #- ros_search: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/RIO/
   - fw: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/TIGER/Cinnamon
   - fw_s: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/TIGER/Cinnamon
-  - fw2: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/SOLO/Common
-  - fw2_s: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/SOLO/Common
+  - fw2: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/UTAH/SYSTEM/Cinnamon
+  - fw2_s: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/UTAH/SYSTEM/Cinnamon
 
   - ril: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/ETC/RIL/VENDOR/TIGER/
   - ril_s: cd /home-mc/wangkeun.oh/Perforce/GA_RIL_WangkeunOh_VdiLinuxPc_Source/ETC/RIL/VENDOR/TIGER/
