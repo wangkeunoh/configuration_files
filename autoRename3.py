@@ -443,6 +443,23 @@ def autoAnalyzer_for_dct(given_name):
     f_analysis_dct.close()
     print("autoAnalyzer_for_dct done2!")
 
+#D DNC-
+def autoAnalyzer_for_dnc(given_name):
+    if ('png' in given_name) : return
+    if ('dumpstate_debug_history.lst' in given_name) : return
+    if ('dumpstate_log.txt' in given_name) : return
+    if ('dumpstate-stats.txt' in given_name) : return
+
+    f_analysis_dnc= open(given_name + "_wg_dnc" , 'w')
+    f_ori = open("./" + given_name, 'r')
+    while True:
+        line = f_ori.readline()
+        if not line: break
+
+        if ('DNC-' in line):
+            f_analysis_dnc.write(line.strip() + '\n')
+    f_analysis_dnc.close()
+    print("autoAnalyzer_for_dnc done2!")
 
 
 #cp reset
@@ -791,10 +808,15 @@ def autoAnalyzer_for_ground(given_name):
             f_analysis_ground.write(line.strip() + '\n')
         elif ('DUMP OF SERVICE netpolicy:' in line):
             f_analysis_ground.write(line.strip() + '\n')
+        elif ('SaveImageInBackgroundTask: mImageFilePath' in line):
+            f_analysis_ground.write(line.strip() + '\n')
+        elif ('FreecessTrigger: doze state changed' in line):
+            f_analysis_ground.write(line.strip() + '\n')
+        elif ('Returning BLOCKED NetworkInfo to uid' in line):
+            f_analysis_ground.write(line.strip() + '\n')
+        elif ('setDataEnabledForReason' in line):
+            f_analysis_ground.write(line.strip() + '\n')
     f_analysis_ground.close()
-
-
-
     print("autoAnalyzer_for_ground done!")
 
         
@@ -956,8 +978,8 @@ def autoAnalyzer_for_secril(given_name):
             f_analysis_secril.write(line.strip() + '\n')
 
 #p11 = re.compile('.*androidruntime.*android.*.*phone.*')
-        elif (p11.search(line)):
-            f_analysis_secril.write(line.strip() + '\n')
+        #elif (p11.search(line)):
+        #    f_analysis_secril.write(line.strip() + '\n')
 
     f_analysis_secril.close()
     print("autoAnalyzer_for_secril done!")
@@ -1547,6 +1569,7 @@ def autoAnalyzer(given_name):
     autoAnalyzer_for_cpreset(given_name)
     autoAnalyzer_for_ril_qmi_rild_dc(given_name)
     autoAnalyzer_for_dct(given_name)
+    autoAnalyzer_for_dnc(given_name)
     autoAnalyzer_for_rild(given_name)
     autoAnalyzer_for_gprs(given_name)
     autoAnalyzer_for_cs(given_name)
@@ -1563,6 +1586,7 @@ def autoAnalyzer(given_name):
     autoAnalyzer_for_epdg(given_name)
     autoAnalyzer_for_setting(given_name)
     autoAnalyzer_for_mtu(given_name)
+
 
 
     print("autoAnalyze done!")
